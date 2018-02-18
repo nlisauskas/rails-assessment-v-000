@@ -1,0 +1,8 @@
+<h2>Here's an overview of your round at <%= @round.course.name %>.</h2>
+<%= render "round_info" %>
+<br></br>
+<%= link_to "Return to profile page", user_path(session[:user_id]) %>
+<br></br>
+<%= link_to "Add a New Round", new_round_path %>
+<br></br>
+<%= link_to "Add a New Course", new_course_path %>

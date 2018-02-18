@@ -10,5 +10,9 @@
 
 <%= yield %>
 
+<br></br>
+<% if session[:user_id] %>
+<%= link_to "Sign Out", signout_path %>
+<% end %>
 </body>
 </html>

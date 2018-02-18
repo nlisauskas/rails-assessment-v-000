@@ -1,0 +1,12 @@
+<%= form_for @round do |f| %>
+<%= f.label :score %>
+<%= f.text_field :score %>
+<br></br>
+<%= f.label :putts %>
+<%= f.text_field :putts %>
+<br></br>
+<%= f.label :course %>
+<%= f.collection_select :course_id, Course.all, :id, :name %>
+<br></br>
+<%= f.submit %>
+<% end %>
