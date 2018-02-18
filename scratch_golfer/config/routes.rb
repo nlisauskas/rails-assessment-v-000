@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :courses
   resources :rounds
-  resources :users
+  resources :users, except: :new
+  root 'welcome#home'
+  get '/signup', to: 'users#new', as: 'signup'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
