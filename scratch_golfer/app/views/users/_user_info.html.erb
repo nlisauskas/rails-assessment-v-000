@@ -3,7 +3,10 @@ Name: <%= @user.name %>
 Hometown: <%= @user.hometown %>
 <br></br>
 <% if @user.handicap %>
+  <% if @user.handicap = 1000 %>
+  Handicap: Play at least 5 rounds for an accurate handicap.
+  <% else %>
 Handicap: <%= @user.handicap %>
+  <% end %>
 <% end %>
 <br></br>
-<%= link_to "Add a round to keep your handicap accurate", new_round_path %>

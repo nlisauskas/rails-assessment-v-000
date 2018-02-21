@@ -1,7 +1,9 @@
 <h2>Welcome to your Scratch Golfer Profile Page.</h2>
 <%= render "user_info" %>
-
 <br></br>
-<% if @user.id = session[:user_id] %>
+<%= link_to "Check out the courses #{@user.name} has played.", root_path %><br></br>
+<%= link_to "Take a look at all the rounds #{@user.name} has played.", root_path %>
+<% if @user.id == session[:user_id] %>
+<%= link_to "Add a round to keep your handicap accurate", new_round_path %>
 <%= link_to "Edit your profile page", edit_user_path %>
 <% end %>
