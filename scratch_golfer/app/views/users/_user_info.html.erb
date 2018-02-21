@@ -2,8 +2,8 @@ Name: <%= @user.name %>
 <br></br>
 Hometown: <%= @user.hometown %>
 <br></br>
-<!--<% if @user.handicap %> -->
-Handicap: <%= @user.calculate_handicap %>
-<!-- <% else %> -->
-<!-- <%= link_to "Add a round to create your handicap", new_round_path %> -->
-<!-- <% end %> -->
+<% if @user.handicap %>
+Handicap: <%= @user.handicap %>
+<% end %>
+<br></br>
+<%= link_to "Add a round to keep your handicap accurate", new_round_path %>

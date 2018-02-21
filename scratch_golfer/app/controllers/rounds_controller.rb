@@ -5,7 +5,10 @@ class RoundsController < ApplicationController
 
   def create
     @round = Round.new(round_params)
+    @round.user_id = session[:user_id]
     if @round.save
+      @user = User.find_by(session[:user_id])
+      @user.calculate_handicap
       redirect_to @round
     else
       redirect_to new_round_path
@@ -19,6 +22,6 @@ class RoundsController < ApplicationController
   private
 
   def round_params
-    params.require(:round).permit(:score, :putts, :course_id, :user_id => session[:user_id])
+    params.require(:round).permit(:score, :putts, :course_id)
   end
 end

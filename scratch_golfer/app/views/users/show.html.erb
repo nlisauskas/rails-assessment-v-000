@@ -1,2 +1,7 @@
 <h2>Welcome to your Scratch Golfer Profile Page.</h2>
 <%= render "user_info" %>
+
+<br></br>
+<% if @user.id = session[:user_id] %>
+<%= link_to "Edit your profile page", edit_user_path %>
+<% end %>
