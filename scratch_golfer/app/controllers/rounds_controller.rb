@@ -3,6 +3,9 @@ class RoundsController < ApplicationController
     @round = Round.new
   end
 
+  def index
+  end
+
   def create
     @round = Round.new(round_params)
     @round.user_id = session[:user_id]

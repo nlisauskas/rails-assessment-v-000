@@ -1,7 +1,11 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Course.all
+    if params[:user_id]
+      @courses = User.find(params[:user_id]).courses
+    else
+      @courses = Course.all
+    end
   end
 
   def new
