@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :courses do
     resources :rounds
   end
-  
+
   resources :rounds
 
   resources :users, except: :new do
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get '/signup', to: 'users#new', as: 'signup'
   get '/login', to: 'sessions#new', as: 'login'
+  post '/login', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy', as: 'signout'
 
   # The priority is based upon order of creation: first created -> highest priority.

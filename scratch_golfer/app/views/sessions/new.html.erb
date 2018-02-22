@@ -1,10 +1,10 @@
 <h2>Log In to your Scratch Golfer profile below.</h2>
-<%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br></br>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<br></br>
-<%= f.submit %>
+<%= form_for @user, url: login_path, method: :post do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br></br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br></br>
+  <%= f.submit "login" %>
 <% end %>

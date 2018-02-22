@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @user.calculate_handicap
+    @user.save
   end
 
   def edit
