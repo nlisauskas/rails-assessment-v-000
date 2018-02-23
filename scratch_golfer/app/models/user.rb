@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :rounds
   has_many :courses, through: :rounds
+  validates :name, presence: true
+  validates :hometown, presence: true
+  validates :password, presence: true, length: { in: 6..20}
   has_secure_password
 
 
