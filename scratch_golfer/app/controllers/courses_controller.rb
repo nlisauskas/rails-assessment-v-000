@@ -2,7 +2,8 @@ class CoursesController < ApplicationController
 
   def index
     if params[:user_id]
-      @courses = User.find(params[:user_id]).courses
+      @user = User.find_by_id(params[:user_id])
+      @courses = @user.courses
     else
       @courses = Course.all
     end

@@ -12,6 +12,7 @@
 
 <br></br>
 <% if session[:user_id] %>
+<%= link_to "Return to Profile Page", user_path(session[:user_id]) %><br></br>
 <%= link_to "Sign Out", signout_path %>
 <% end %>
 </body>

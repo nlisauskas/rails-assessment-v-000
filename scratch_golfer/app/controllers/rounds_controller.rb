@@ -4,6 +4,16 @@ class RoundsController < ApplicationController
   end
 
   def index
+    if params[:user_id]
+      @user = User.find_by_id(params[:user_id])
+      @rounds = @user.rounds
+    elsif params[:course_id]
+      @course = Course.find_by_id(params[:course_id])
+      @rounds = @course.rounds
+    else
+      @rounds = Round.all
+    end
+
   end
 
   def create
