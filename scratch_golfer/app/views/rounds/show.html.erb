@@ -1,6 +1,11 @@
 <h2>Here's an overview of your round at <%= @round.course.name %>.</h2>
 <%= render "round_info" %>
 <br></br>
+<%= link_to "Edit This Round", edit_user_round_path(@round.user, @round) %>
+<br></br>
+<%= form_tag round_path(@round), method: "delete" %>
+  <%= submit_tag "Delete this round" %>
+<br></br>
 <%= link_to "Add a New Round", new_round_path %>
 <br></br>
 <%= link_to "Add a New Course", new_course_path %>

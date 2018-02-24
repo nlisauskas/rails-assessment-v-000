@@ -8,6 +8,26 @@
 </head>
 <body>
 
+  <header class="navbar  navbar-inverse">
+  <div class="navbar-class">
+  <div class="container">
+
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+
+    <ul class="nav navbar-nav">
+    <li><%=link_to "HOME", root_path%></li>
+    <li><%=link_to "USERS", users_path%></li>
+    <li><%=link_to "COURSES", courses_path %></li>
+    <li><%=link_to "ROUNDS", rounds_path %></li>
+    <li><%=link_to'YOUR PROFILE', user_path(session[:user_id])%></li>
+    </ul>
+
+
+    </div>
+   </div>
+   </header>
+
 <%= yield %>
 
 <br></br>
