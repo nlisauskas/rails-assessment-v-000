@@ -1,4 +1,10 @@
 <h2>Log In to your Scratch Golfer profile below.</h2>
+
+<% if flash[:danger] %>
+   <div class="notice"><%= flash[:danger] %></div>
+ <% end %>
+
+
 <%= form_for @user, url: login_path, method: :post do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>

@@ -20,7 +20,9 @@
     <li><%=link_to "USERS", users_path%></li>
     <li><%=link_to "COURSES", courses_path %></li>
     <li><%=link_to "ROUNDS", rounds_path %></li>
+    <% if session[:user_id] %>
     <li><%=link_to'YOUR PROFILE', user_path(session[:user_id])%></li>
+    <% end %>
     </ul>
 
 

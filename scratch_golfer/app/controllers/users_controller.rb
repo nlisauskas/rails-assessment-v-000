@@ -16,10 +16,10 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      redirect_to signup_path
+      render :new
     end
     else
-      redirect_to signup_path
+      render :new
     end
   end
 
