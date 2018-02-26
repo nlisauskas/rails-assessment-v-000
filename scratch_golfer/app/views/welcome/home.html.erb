@@ -1,11 +1,9 @@
 <h1>Welcome to Scratch Golfer!</h1>
 <p>Your home for handicap tracking, booking tee times, and improving your golf game</p>
 
-<div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
+<% if session[:user_id] %>
+  <h1><%= @user.name %></h1>
+  <h2>Facebook UID: <%= @user.uid %></h2>
+<% else %>
+  <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+<% end %>
