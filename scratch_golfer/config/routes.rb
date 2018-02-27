@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :courses do
     resources :rounds
+    resources :users, only: [:index]
   end
 
   resources :rounds
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     resources :courses
   end
 
-  root 'welcome#home' 
+  root 'welcome#home'
   get '/auth/facebook/callback' => 'sessions#create'
 
   # The priority is based upon order of creation: first created -> highest priority.

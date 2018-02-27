@@ -12,3 +12,9 @@ state: 'FL',
 slope: 70.6,
 rating: 129
 )
+
+User.create(
+name: 'Nick',
+hometown: 'Aurora',
+password: '123456'
+)
