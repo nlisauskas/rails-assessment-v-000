@@ -24,7 +24,7 @@ class RoundsController < ApplicationController
       @user.calculate_handicap
       redirect_to @round
     else
-      redirect_to new_round_path
+      render :new
     end
   end
 

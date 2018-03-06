@@ -16,5 +16,4 @@ rating: 129
 User.create(
 name: 'Nick',
 hometown: 'Aurora',
-password: '123456'
 )
