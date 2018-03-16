@@ -23,6 +23,10 @@ class CoursesController < ApplicationController
     end
   end
 
+  def edit
+    @course = Course.find_by(:id => params[:id])
+  end
+
   def show
     @course = Course.find_by(:id => params[:id])
   end
