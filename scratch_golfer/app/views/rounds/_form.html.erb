@@ -6,8 +6,25 @@
 <%= f.text_field :putts %>
 <br></br>
 <%= f.label :course %>
-<%= f.collection_select :course_id, Course.all, :id, :name %>
-<%= link_to "Don't see the course you played listed? Create a new course.", new_course_path %>
+<%= f.collection_select :course_id, Course.all, :id, :name , {:include_blank => 'Select course or create new below'}%>
+<p>Need to add a new course?</p>
+
+<%= f.fields_for :course do |c| %>
+  <%= c.label :name %>
+  <%= c.text_field :name %><br>
+
+  <%= c.label :city %>
+  <%= c.text_field :city %><br>
+
+  <%= c.label :state %>
+  <%= c.text_field :state %><br>
+
+  <%= c.label :slope %>
+  <%= c.text_field :slope %><br>
+
+  <%= c.label :rating %>
+  <%= c.text_field :rating %><br>
+<% end %>
 <br></br>
 <%= f.submit %>
 <% end %>

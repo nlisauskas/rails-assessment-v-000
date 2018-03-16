@@ -17,3 +17,8 @@ User.create(
 name: 'Nick',
 hometown: 'Aurora',
 )
+
+Round.create(
+score: 80,
+putts: 32
+)

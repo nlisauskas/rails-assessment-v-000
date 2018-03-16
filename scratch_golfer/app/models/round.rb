@@ -2,9 +2,11 @@ class Round < ActiveRecord::Base
   belongs_to :user
   belongs_to :course
   validates :score, presence: true
+  validates :course_id, presence: true
   validates :putts, presence: true
+  accepts_nested_attributes_for :course
 
-  scope :by_user, -> { joins(:users).where('users.user_id = ?', user.id)}
+  scope :by_user, -> on { where("user_id = ?", on) if on.present? }
 
   def self.lowest_round
     scores = []

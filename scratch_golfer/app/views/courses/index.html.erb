@@ -13,3 +13,4 @@
 <% @courses.each do |course| %>
 <%= link_to "#{course.name} - #{course.city}, #{course.state}", course_path(course) %><br></br>
 <% end %>
+<%= link_to "Don't see a course you've played listed? Create a new course.", new_course_path %>

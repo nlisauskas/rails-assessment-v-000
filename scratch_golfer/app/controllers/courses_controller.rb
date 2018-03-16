@@ -15,6 +15,7 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
+    @course.save
     if @course.save
     redirect_to course_path(@course)
     else
