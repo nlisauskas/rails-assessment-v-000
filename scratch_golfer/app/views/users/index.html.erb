@@ -11,7 +11,7 @@
 <h1>Users Who Have Played <%= @course.name %></h1>
 <h3>Find your fellow <em>Scratch Golfers</em> below.</h3>
 
-<% if @course.users %>
+<% if @course.users == false %>
 <h4>No users have played this course yet.</h4>
 <% else %>
 <% @course.users.each do |user| %>
