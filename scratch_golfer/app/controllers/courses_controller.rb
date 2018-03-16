@@ -28,7 +28,9 @@ class CoursesController < ApplicationController
   end
 
   def update
-    @course = Course.update(course_params)
+    raise params
+    @course = Course.find_by(:id => params[:id])
+    @course.name = params[]
     @course.save
     if @course.save
     redirect_to course_path(@course)
